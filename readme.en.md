@@ -1,91 +1,70 @@
-# Course's warm up exercise
+# Course warm-up exercises
 
-This repository contains a set of Java exercises that will help you review the content of the Programming 1 course and familiarize yourself with the technical implementation of the exercises for the advanced course. This repository covers three main topics:
+This repository contains Java exercises that help you review the contents of the Ohjelmointi 1 course and get familiar with how the exercises of this follow-up course work. The topics are strings, collections, and classes and objects. Detailed instructions for each method and class are in the comments of the Java classes in the template.
 
-1. Strings
-2. Collections
-3. Classes and Objects
+## Starting the exercise
 
-In this file, you will find the assignments and instructions for testing your solutions. Detailed instructions on the functionality of each method and class can be found in the provided Java classes of the task template.
-
-Exercise's each section have ready made [JUnit](https://junit.org/) unit test, which are located in the [src/test/java/](./src/test/java/) directory. You can run the tests either using your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html). You don't need to get into the technical implementation of the tests. Right now, it is enough that you run the tests and familiarize yourself with the possible error messages.
-
-Note, that you can't change the names of the classes or methods, or the types of the parameters or return values. These kind of changes will cause compilation errors for the tests. If you happen to change a file and want to revert the changes, you can do that using the `git restore` command:
+First fork this repository into your own GitHub repository with GitHub's **Fork** button, and only then clone your fork to your computer:
 
 ```sh
-git restore path/to/the/file
+git clone https://github.com/<your-github-username>/2-warming-up.git
 ```
 
-## Starting the exerices
+Open the cloned project in your code editor.
 
-First fork this repository into your own GitHub repository with GitHub's **Fork** button. The exercise is done in your own fork, so only then clone your fork to your computer (the address contains your own GitHub username):
+## Testing
 
-```sh
-git clone https://github.com/<your-github-username>/<repository-name>.git
-```
-
-Once you have cloned the repository, open it in your code editor.
-
-## Submitting solutions
-
-Solutions to this exercise are not graded by any GitHub Actions workflow (YAML), and `git push` does not start any grading. Grading is done by the course system: submit your solution on the exercise page in the course system, where your code is compiled and the exercise's JUnit tests are run.
-
-Finally, push everything to your public GitHub repository and press the **Lähetä tarkistettavaksi** (submit for checking) button on the exercise page. The course system's bot then fetches your code from your repository and checks it with the same tests.
-
-💡 *You can submit your solution as many times as needed until the chapter deadline. Your best result is kept.*
-
-
-### Part 1: strings *(recap, 30 %)*
-
-In the Java class [StringBasics](./src/main/java/part01/StringBasics.java), there are methods, some of which are incorrect and some are incomplete. In the first part of the task, you need to correct and complete these methods. Detailed descriptions of the correct functionality of each method can be found in the comments of each method. Do not change the names, parameters, or return types of the existing methods. Changes may cause issues with the automatic testing of the task.
-
-You can write your own `main` method to test the methods or use the [JUnit](https://junit.org/) tests provided for the class, which you can find in the class [StringBasicsTest](./src/test/java/part01/StringBasicsTest.java).
-
-You can run the tests either using your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or using the [Gradle tool](https://docs.gradle.org/current/userguide/java_testing.html):
+The parts of the exercise have ready-made [JUnit](https://junit.org/) unit tests in the [src/test/java](./src/test/java/) directory. Each part tells which test class grades it. You can run the tests with your code editor's testing tool ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)) or with [Gradle](https://docs.gradle.org/current/userguide/java_testing.html), for example:
 
 ```
 ./gradlew test --tests StringBasicsTest        # unix
 .\gradlew.bat test --tests StringBasicsTest    # windows
 ```
 
-💡 *If the tests do not pass, try running the command again with the `--info` argument at the end. This will give you more detailed information about what went wrong in the test. Alternatively, you can run the tests using the testing tool in your code editor ([VS Code](https://code.visualstudio.com/docs/java/java-testing), [Eclipse](https://www.vogella.com/tutorials/JUnitEclipse/article.html)), which typically displays errors clearly.*
+Add `--info` to the end of the command for more details about failing tests. You do not need to study how the tests are implemented, and you can also try your solution with your own `main` method. You may write more tests of your own, but do not change or remove the given tests.
 
-💡 *You do not need to familiarize yourself with the technical implementation of the actual test. At this stage, it is sufficient to run the tests and review any error messages they may produce.*
+Do not change the names, parameters or return types of the given classes, methods and constructors, because the tests will then not compile. You get the original version of a file back with `git restore <path to file>` or with the **Palauta lähtökoodi** (restore starter code) function of the course system.
 
-### Part 2: collections *(recap, 30 %)*
+## Submitting and points
 
-In the second part of the task, you need to implement the methods in the [CollectionsBasics](./src/main/java/part02/CollectionsBasics.java) class. Detailed descriptions of the correct functionality of each method can be found in the comments of each method.
+Each part of the exercise has its own page in the course system (https://jtjuslin.kapsi.fi/java), and its code fields contain the part's starter code. Copy your solution into the code fields or write it there directly. **Testaa ilman palautusta** (test without submitting) runs the part's tests without saving points, and **Lähetä** (submit) submits your solution. Each test class is accepted only if all of its tests pass, and the points are divided according to the accepted test classes.
 
-You can write your own `main` method to test the methods or use the [JUnit](https://junit.org/) tests provided for the class, which you can find in the [CollectionsBasicsTest](./src/test/java/part02/CollectionsBasicsTest.java) class. You can again run the tests using your code editor's testing tool or the Gradle automation tool:
+**Points in two stages**
 
-```
-./gradlew test --tests CollectionsBasicsTest        # unix
-.\gradlew.bat test --tests CollectionsBasicsTest    # windows
-```
+1. When your solution passes in the course system, you get **half of the points** for the part.
+2. Finally, push everything to your public GitHub repository. Then press the **Lähetä tarkistettavaksi** (submit for checking) button on the part's page. When the tests pass, you get **full points** for the part. The repository may remain public.
 
-🚀 *You will likely learn entirely new ways to implement these methods as the course progresses. You can revisit these methods later and consider how you would implement them, for example, using Streams.*
+There is no grading YAML workflow (GitHub Actions) on GitHub, and `git push` does not start any grading. When you press **Lähetä tarkistettavaksi**, the course system's bot fetches your code from your repository and checks it with the same tests. Both stages must be completed before the chapter deadline. You can submit as many times as you need, and your best result is kept.
 
-### Part 3: classes and objects *(recap, 20 + 20 %)*
 
-In the third part of the task, you first need to complete two Java classes:
+## Part 1: strings *(recap, 30 %)*
 
-- [Person](./src/main/java/part03/Person.java) is a fairly simple Java class that models individuals with a name and age. The implementation of the class is incomplete, and you need to complete it according to the comments in the class and methods.
-- The [ObjectExercise](./src/main/java/part03/ObjectExercise.java) class, on the other hand, contains a single method where you are supposed to handle `Person` objects and combine the names of individuals into a single string. You can find the detailed rules for combining names in the method's comments.
+The Java class [StringBasics](./src/main/java/part01/StringBasics.java) has methods, some of which contain bugs and some of which are not implemented. Fix and complete the methods according to their comments. `centerMultiLine` is an optional extra task: if it returns `null`, its test is skipped.
 
-Testing your implementation is done in the same way as in the previous parts, using your own `main` method or the provided JUnit unit tests ([PersonTest.java](./src/test/java/part03/PersonTest.java), [ObjectExerciseTest.java](./src/test/java/part03/ObjectExerciseTest.java)). If you are using the Gradle tool, you can run the tests with the command:
+Graded with the test class [StringBasicsTest](./src/test/java/part01/StringBasicsTest.java).
 
-```
-# unix
-./gradlew test --tests PersonTest
-./gradlew test --tests ObjectExerciseTest
+💡 *The message of a failing test tells what was expected. For example, `expected: <He> but was: <Hello>` means that the test expected He, but your method returned Hello.*
 
-# windows
-.\gradlew.bat test --tests PersonTest
-.\gradlew.bat test --tests ObjectExerciseTest
-```
+
+## Part 2: collections *(recap, 30 %)*
+
+Implement the methods of the [CollectionsBasics](./src/main/java/part02/CollectionsBasics.java) class according to their comments. The methods handle lists: the largest value, sum, multiplication, a range of numbers, joining strings, lengths and occurrences of a substring.
+
+Graded with the test class [CollectionsBasicsTest](./src/test/java/part02/CollectionsBasicsTest.java).
+
+🚀 *During the course, you will learn new ways to implement these methods. You can come back to them later and think about how you would implement them with streams, for example.*
+
+
+## Part 3: classes and objects *(recap, 20 % + 20 %)*
+
+Complete two Java classes:
+
+* [Person](./src/main/java/part03/Person.java) models a person with a name and an age. Implement its instance variables, constructor and getters according to the comments of the class and its methods.
+* The method of the [ObjectExercise](./src/main/java/part03/ObjectExercise.java) class handles a list of `Person` objects and joins the names into one string. The detailed rules are in the method's comments.
+
+Graded with the test classes [PersonTest](./src/test/java/part03/PersonTest.java) (half of the points) and [ObjectExerciseTest](./src/test/java/part03/ObjectExerciseTest.java) (half of the points).
+
 
 ## License and authors
 
-This exercise is made by Teemu Havulinna and translated to English by Kalle Ilves and it is licensed under a [Creative Commons BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-
-ChatGPT 3.5 language model and GitHub copilot AI assistant has been used to implement the exercise.
+This exercise was developed by Teemu Havulinna and Jukka Juslin, and it is licensed under the [Creative Commons BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/4.0/). ChatGPT 3.5 and GitHub Copilot were used in creating the assignment, the source code and the tests.
