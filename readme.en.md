@@ -18,10 +18,10 @@ git restore path/to/the/file
 
 ## Starting the exerices
 
-Start by cloning the Git repository to your own computer. The exercise must be done in your own copy, so make sure that your GitHub username is included in the repository address! Create your own copy by forking or copying this repository to your own GitHub account.
+First fork this repository into your own GitHub repository with GitHub's **Fork** button. The exercise is done in your own fork, so only then clone your fork to your computer (the address contains your own GitHub username):
 
 ```sh
-git clone https://github.com/make-sure-that-the-repository-address-contains-your-account.git
+git clone https://github.com/<your-github-username>/<repository-name>.git
 ```
 
 Once you have cloned the repository, open it in your code editor.
