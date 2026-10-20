@@ -61,7 +61,7 @@ public class CollectionsBasics {
      */
     public List<Integer> multiply(List<Integer> numbers, int factor) {
        ////return null; // TODO: implement this method
-       List<integer>result = new ArrayList<>();
+       List<Integer>result = new ArrayList<>();
 
        for(int number:numbers){
         result.add(number*factor);
@@ -81,7 +81,7 @@ public class CollectionsBasics {
      */
     public List<Integer> range(int start, int end) {
         //return null; // TODO: implement this method
-        List<integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
         for(int i = start; i<end;i++){
             result.add(i);
         }
@@ -115,10 +115,11 @@ public class CollectionsBasics {
      */
     public List<Integer> getLengths(List<String> strings) {
         //eturn null; // TODO: implement this method
-        List<integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
         for (String text : strings){
             result.add(text.length());
         }
+        return result;
     }
 
     /**
@@ -139,7 +140,7 @@ public class CollectionsBasics {
         // You can assume that the given substring is not empty.
 
         //return null; // TODO: implement this method
-        List<integer> result = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
 
         for (int i =0; i<=text.length()-substring.length();i++){
             if (text.startsWith(substring, i)){
