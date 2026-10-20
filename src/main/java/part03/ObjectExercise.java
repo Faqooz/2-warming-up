@@ -1,5 +1,6 @@
 package part03;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,7 +25,13 @@ public class ObjectExercise {
      */
     public List<String> getNames(List<Person> people) {
         // hint: you can call the getName() method of each Person on the list
-        return null;
+        List<String> names = new ArrayList<>();
+
+        for (Person person : people) {
+            names.add(person.getName());
+        }
+
+        return names;
     }
 
     /**
@@ -38,9 +45,24 @@ public class ObjectExercise {
      * @return The oldest person in the list.
      */
     public Person getOldest(List<Person> people) {
+        if (people.isEmpty()) {
+            return null;
+        }
+
+        Person oldest = people.get(0);
+
+        for (Person person : people) {
+            if (person.getAge() > oldest.getAge()) {
+                // jos random henkilön ikä on suurempi kuin sen hetkisen vanhimman.
+                // oldest on tässä henkilö listalta.
+                oldest = person;
+            }
+        }
+
+        return oldest;
+
         // hint: you can call the getAge() method of each Person on the list and compare
         // the ages to find the oldest person
-        return null;
     }
 
     /**
@@ -66,6 +88,27 @@ public class ObjectExercise {
      */
     public String generateNamesString(List<Person> people) {
         // TODO: implement this method
-        return null;
+        List<String> names = getNames(people);
+        int size = names.size();
+
+        if (size == 0) {
+            return "";
+        }
+
+        if (size == 1) {
+            return names.get(0);
+        }
+
+        if (size == 2) {
+            return names.get(0) + " and " + names.get(1);
+        }
+
+        if (size == 3) {
+            return names.get(0) + ", " + names.get(1)
+                    + " and " + names.get(2);
+        }
+
+        return names.get(0) + ", " + names.get(1)
+                + " and " + (size - 2) + " others";
     }
 }
