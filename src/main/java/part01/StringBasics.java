@@ -99,7 +99,7 @@ public class StringBasics {
         int leftSpaces= totalSpaces/2;
         int rightSpaces= totalSpaces-leftSpaces;
         
-        return " ".repeat(leftSpaces)+ text + " ".repeat(rightSpaces;)
+        return " ".repeat(leftSpaces)+ text + " ".repeat(rightSpaces);
     }
 
     /**
